@@ -5,7 +5,7 @@
 
 ###  Control Flow Graph
 
-![Screenshot](CFG.png)
+![Control Flow Graph](CFG1.png)
 
 ### Цикломатска комплексност
 
