@@ -5,7 +5,7 @@
 
 ###  Control Flow Graph
 
-Фотографија од control flow graph-ot 
+![Screenshot](Control flow-lab 2.png)
 
 ### Цикломатска комплексност
 
