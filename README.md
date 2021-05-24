@@ -5,7 +5,7 @@
 
 ###  Control Flow Graph
 
-![Screenshot](Control flow-lab 2.png)
+![Screenshot](CFG_lab2.png)
 
 ### Цикломатска комплексност
 
