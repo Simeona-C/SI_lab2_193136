@@ -14,7 +14,7 @@
 ### Тест случаи според критериумот  Multiple Condition
 
 statement:  
-37 `if (hr < 0 || hr > 24)`
+37 if (hr < 0 || hr > 24)
 
 | Combination | Test time |
 | ----------- | --------- |
@@ -25,7 +25,7 @@ statement:
 
 
 statement:
-46 `if (min < 0 || min > 59)`
+46 if (min < 0 || min > 59)
 
 | Combination | Test time |
 | ----------- | --------- |
@@ -35,7 +35,7 @@ statement:
 
 
 statement:
-49 `if (sec >= 0 && sec <= 59)`
+49 if (sec >= 0 && sec <= 59)
 
 | Combination | Test time |
 | ----------- | --------- |
@@ -46,7 +46,7 @@ statement:
 
 
 statement:
-55 `if (hr == 24 && min == 0 && sec == 0)`
+55 if (hr == 24 && min == 0 && sec == 0)
 
 | Combination | Test time |
 | ----------- | --------- |
