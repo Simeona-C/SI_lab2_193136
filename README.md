@@ -11,60 +11,51 @@
 
 Цикломатската комплексност на овој код е 8, истата ја добив преку формулата P+1, каде што P е бројот на предикатни јазли. Во случајoв P=7, па цикломатската комплексност изнесува 8.
 
-### Тест случаи според критериумот  Every statement 
+### Тест случаи според критериумот  Multiple Condition
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertThrows;
-import static org.junit.jupiter.api.Assertions.*;
+statement:  
+37 `if (hr < 0 || hr > 24)`
 
-import java.util.ArrayList;
-import java.util.List;
+| Combination | Test time |
+| ----------- | --------- |
+| TF | Time(-5, 1, 1) |
+| FT | Time(30, 1, 1) |
+| FF | Time(10, 1, 1) |
 
-import org.junit.jupiter.api.Test;
 
-class T1EveryStatement {
-	private final SILab2 si=new SILab2();
-	
-	@Test
-	void test() {
-		List<Time> t = new ArrayList<Time>();
-		List<Integer> res = si.function(t);
-		System.out.println("Testing by Every Statement Criteria");
-		assertEquals(0, res.size());
-		
-		t.add(new Time(1,1,1));
-		t.add(new Time(24,0,0));
-		res = si.function(t);
-		assertEquals(3661, res.get(0));
-		assertEquals(86400, res.get(1));
-		
-		t.clear();
-		t.add(new Time(-2,2,4));
-		assertThrows(RuntimeException.class, () -> si.function(t), "No exception when hours are smaller than the minimum");
-		
-		t.clear();
-		t.add(new Time(25,2,4));
-		assertThrows(RuntimeException.class, () -> si.function(t), "No exception when hours are grater than the maximum");
 
-		t.clear();
-		t.add(new Time(2,79,4));
-		assertThrows(RuntimeException.class, () -> si.function(t), "No exception when minutes are not valid");
+statement:
+46 `if (min < 0 || min > 59)`
 
-		t.clear();
-		t.add(new Time(2,2,400));
-		assertThrows(RuntimeException.class, () -> si.function(t), "No exception when seconds are not valid");
+| Combination | Test time |
+| ----------- | --------- |
+| TF | Time(1, -10, 1) |
+| FT | Time(1, 60, 1) |
+| FF | Time(1, 1, 1) |
 
-		t.clear();
-		t.add(new Time(24,2,4));
-		assertThrows(RuntimeException.class, () -> si.function(t), "No exception when time is greater than the maximum");
 
-	}
-	
-	
+statement:
+49 `if (sec >= 0 && sec <= 59)`
 
-}
+| Combination | Test time |
+| ----------- | --------- |
+| TF | Time(1, 1, -10) |
+| FT | Time(1, 1, 60) |
+| FF | Time(1, 1, 1) |
 
-### Тест случаи според критериумот Every path
+
+
+statement:
+55 `if (hr == 24 && min == 0 && sec == 0)`
+
+| Combination | Test time |
+| ----------- | --------- |
+| TTT | Time(24, 0, 0) |
+| TTF | Time(24, 0, 1) |
+| TFT | Time(24, 1, 0) |
+| TFF | Time(24, 1, 1) |
+
+### Тест случаи според критериумот Every branch
 
 .... 
 
